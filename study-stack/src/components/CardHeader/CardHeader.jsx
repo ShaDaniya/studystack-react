@@ -1,9 +1,12 @@
-import style from './cardheader.scss';
-
-import React from 'react'
+import style from './cardheader.module.scss';
 
 export default function CardHeader() {
   return (
-    <div>CardHeader</div>
+    <div className={style.container}>
+        <div className={style.item}>English</div>
+        <div className={style.item}>Transcription</div>
+        <div className={style.item}>Russian</div>
+        <div className={style.item}>Tag</div>
+    </div>
   )
 }

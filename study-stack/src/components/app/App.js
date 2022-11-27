@@ -3,11 +3,13 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import words from '../data/data.json';
 import CardList from '../CardList/CardList';
+import CardHeader from '../CardHeader/CardHeader';
 
 function App() {
   return (
     <div className={style.App}>
       <Header />
+      <CardHeader/>
       {words.map((item, index) => {
       return <CardList english={item.english} transcription={item.transcription} russian={item.russian} tags={item.tags} key={index}/>})}
       <Footer />
