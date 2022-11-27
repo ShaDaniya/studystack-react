@@ -1,4 +1,4 @@
-import style from './study.module.scss'
+import style from './study_word.module.scss'
 
 import React from 'react'
 

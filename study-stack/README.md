@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+Week1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+В течение всего блока React мы будем создавать приложение для изучения иностранных слов по карточкам.
+Пример похожего сервиса: [https://www.studystack.com/Languages](https://www.studystack.com/Languages)
 
-## Available Scripts
+У нас будет список слов, а также режим тренировки. Со временем наше приложение обрастет функциональностью.
+На этой неделе нужно создать новый проект и набросать структуру приложения (список компонент - jsx файлы).
 
-In the project directory, you can run:
+Что должно быть в результате (через 8 недель):
 
-### `npm start`
+- Список всех существующих слов. У каждого слова есть основное значение, транскрипция, перевод, тема. У каждого слова должна быть возможность его удаления и редактирования. Также должна быть возможность добавления слов.
+- Карточка слова, у которой есть основное значение, транскрипция, перевод, тема.
+- Главная страница, где отображаются списки слов и карточек.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Week2
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2.  **Задание для проекта:**
+    На прошлой неделе мы создали основные элементы интерфейса (хедер, футер, карточку слова, список слов и пр.), на этой неделе вам предстоит их стилизовать.
+    Пока что вы можете задавать слова вручную. Чуть позже мы переключим это на API. Структуру для строения слова можете взять отсюда:
 
-### `npm test`
+        [http://itgirlschool.justmakeit.ru/api/words](http://itgirlschool.justmakeit.ru/api/words)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+        - Подключите стили для всех созданных элементов
+        - Выделите основные цвета, шрифты и размеры в отдельный файл
+        - Добавьте анимацию наведения, фокуса и нажатия на все элементы взаимодействия с пользователем (кнопки, формы и т.д.)
+        - Сделайте список слов в виде таблицы. Реализуйте условный рендеринг для полей таблицы: должны отображаться либо поля для чтения и с кнопками редактировать/удалить, либо поля ввода с кнопками сохранить/отмена. Похожий пример:
+        <img src="./public/assets/sample1.png">
