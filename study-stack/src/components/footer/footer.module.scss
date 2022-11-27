@@ -1,0 +1,23 @@
+@import "../../style/variables.scss";
+
+.footer {
+    background-color: #C884A6;
+    color: $mainFontColor;
+    font-family: $mainFont;
+    
+    &__wrapper {
+        min-height: 60px;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(52, 79, 121, .56);
+        gap: 1rem;
+    }
+
+    &__logo {
+        max-width: 60px;
+        padding-left: 0.4rem;
+    }
+}
