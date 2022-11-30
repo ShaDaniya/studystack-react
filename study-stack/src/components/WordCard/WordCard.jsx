@@ -4,25 +4,25 @@ import React, { useState } from 'react'
 
 export default function WordCard({english, transcription, russian}) {
 
-  //для перевода
+  //useState для перевода слова на карточке
   const [translation, setRussian] = useState(false)
   const handleChange = () => {
     setRussian(!translation)
   }
 
+  //useState для стилей кнопки перевода карточки
   let card__translation = "card__button";
   const [checked, setChecked] = useState(false)
 
-  const handleChecked = () => {
+  const handleCheckedStyle = () => {
     setChecked(!checked)
   }
 
-  //для кнопки
   card__translation = checked ? "card__translation" : "card__button"
 
-  //общая функция обработчик на кнопку
+  //общая функция обработчик на кнопку для перевода карточки
   const handleTranslation = () => {
-    handleChecked()
+    handleCheckedStyle()
     handleChange()
   }
 
@@ -36,15 +36,16 @@ export default function WordCard({english, transcription, russian}) {
   let card__text = "question__text"
   const [answered, setAnswered] = useState(false)
 
-  const handleAnswered = () => {
+  const handleAnsweredStyle = () => {
     setAnswered(!answered)
   }
 
   card__text = answered ? "answer__text" : "question__text"
 
+  //общая функция для верхней строчки question/answer
   const handleAnsWords = () => {
     handleAnswer()
-    handleAnswered()
+    handleAnsweredStyle()
   }
 
   return (
