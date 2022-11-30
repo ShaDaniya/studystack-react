@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import words from '../data/data.json';
 import CardList from '../CardList/CardList';
 import CardHeader from '../CardHeader/CardHeader';
+import WordCard from '../WordCard/WordCard';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <CardHeader/>
       {words.map((item, index) => {
       return <CardList english={item.english} transcription={item.transcription} russian={item.russian} tags={item.tags} key={index}/>})}
+      {words.map((item, index) => {
+        return <WordCard  english={item.english} transcription={item.transcription} russian={item.russian} key={index}/>
+      })}
       <Footer />
     </div>
   );
