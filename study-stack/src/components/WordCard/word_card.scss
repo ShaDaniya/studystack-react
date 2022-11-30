@@ -47,12 +47,18 @@
     font-size: 1.3rem;
     transform: translateY(-100%);
     display: inline-block;
-    background-color: #d7aecd;
+    background-color: #c8a9c1;
     text-align: center;
     width: 120px;
     height: 25px;
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover {
+        background-color: #8e9c9a;
+        color: aliceblue;
+        transition: all .4s ease;
+    }
 }
 
 .question__text {
@@ -60,11 +66,17 @@
     font-size: 1.1rem;
     transform: translateY(-100%);
     display: inline-block;
-    background-color: #bbe3e7;
+    background-color: #b3cacb;
     text-align: center;
     width: 120px;
     height: 22px;
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover {
+        background-color: #ac9db5;
+        color:aliceblue;
+        transition: all .4s ease;
+    }
 }
 
