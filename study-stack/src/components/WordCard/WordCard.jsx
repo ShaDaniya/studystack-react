@@ -9,14 +9,14 @@ export default function WordCard({english, transcription, russian}) {
     setRussian(!translation)
   }
 
-  let card__translation = "";
+  let card__translation = "card__button";
   const [checked, setChecked] = useState(false)
 
   const handleChecked = () => {
     setChecked(!checked)
   }
 
-  card__translation = checked ? "card__translation" : ""
+  card__translation = checked ? "card__translation" : "card__button"
 
   const handleTranslation = () => {
     handleChecked()
@@ -30,7 +30,8 @@ export default function WordCard({english, transcription, russian}) {
       <span className={style.card__word}>{english}</span>
       <span className={style.card__transcription}>{transcription}</span>
       <div className={style.btn__container}>
-      <button className={[style.card__button, card__translation].join(' ')} onClick={handleTranslation}>{translation ? russian : "Click to flip"}</button>
+      {/* <button className={[style.card__button, card__translation].join(' ')} onClick={handleTranslation}>{translation ? russian : "Click to flip"}</button> */}
+      <button className={card__translation} onClick={handleTranslation}>{translation ? russian : "Click to flip"}</button>
       </div>
       </div>
       </div>

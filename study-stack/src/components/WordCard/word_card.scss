@@ -1,13 +1,43 @@
 @import "../../style/variables.scss";
 
 .card__translation {
-    // background-color: #CCD5FF;
-    // color: $cardFontColor;
-    font-size: 50px;
+    transform: translateY(50%);
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    background-color: #CCD5FF;
+    color: $cardFontColor;
+    color: $mainFontColor;
+    font-size: 1.3rem;
+    height: 60px;
+    width: 150px;
+    border-radius: 5px;
+    word-break: break-all;
 
-    // &:hover {
-    //     background-color: #9DB5B2;
-    //     color: #625171;
-    //     transition: all .4s ease;
-    // }
+
+    &:hover {
+        background-color: #E7BBE3;
+        color: #625171;
+        transition: all .4s ease;
+    }
+}
+
+.card__button {
+    transform: translateY(150%);
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    background-color: #878E99;
+    color:aliceblue;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    word-break: break-all;
+
+
+    &:hover {
+        background-color: #9DB5B2;
+        color: #625171;
+        transition: all .4s ease;
+    }
 }
