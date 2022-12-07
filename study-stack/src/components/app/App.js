@@ -5,6 +5,7 @@ import words from '../data/data.json';
 import CardList from '../CardList/CardList';
 import CardHeader from '../CardHeader/CardHeader';
 import WordCard from '../WordCard/WordCard';
+import CardSlider from '../CardSlider/CardSlider';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {words.map((item, index) => {
         return <WordCard  english={item.english} transcription={item.transcription} russian={item.russian} key={index}/>
       })}
+      <CardSlider />
       <Footer />
     </div>
   );

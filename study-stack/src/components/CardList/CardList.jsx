@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import style from './card_list.module.scss';
-import Button from '../Button/Button';
 
 export default function Card_list({ english, transcription, russian, tags}) {
 

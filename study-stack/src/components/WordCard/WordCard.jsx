@@ -1,6 +1,6 @@
 import style from './word_card.module.scss';
 import './word_card.scss';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function WordCard({english, transcription, russian}) {
 
