@@ -3,7 +3,12 @@ import WordCard from '../WordCard/WordCard';
 import style from './cardSlider.module.scss';
 import words from '../data/data.json';
 
-export default function CardSlider({ english, transcription, russian }) {
+export default function CardSlider({
+  english,
+  transcription,
+  russian,
+  ...props
+}) {
   const [cardIndex, setCardIndex] = useState(0);
 
   const handleClickNext = () => {
