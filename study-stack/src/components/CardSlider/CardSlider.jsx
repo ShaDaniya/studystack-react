@@ -4,25 +4,27 @@ import style from './cardSlider.module.scss';
 import words from '../data/data.json';
 
 export default function CardSlider({ english, transcription, russian }) {
-  const [cardIndex, setCardIndex] = useState(1);
+  const [cardIndex, setCardIndex] = useState(0);
 
-  console.log(words);
+  const handleClickNext = () => {
+    if (cardIndex === words.length - 1) {
+      setCardIndex(words.length - (words.length - 1));
+    } else {
+      setCardIndex(cardIndex + 1);
+    }
+  };
 
-  function handleClickNext() {
-    let nextCard = cardIndex;
-    nextCard++;
-    setCardIndex(nextCard);
-  }
-
-  function handleClickPrev() {
-    let prevCard = cardIndex;
-    prevCard = prevCard - 1;
-    setCardIndex(prevCard);
-  }
+  const handleClickPrevious = () => {
+    if (cardIndex === 0) {
+      setCardIndex(words.length - 1);
+    } else {
+      setCardIndex(cardIndex - 1);
+    }
+  };
 
   return (
     <div className={style.container}>
-      <button onClick={handleClickPrev} className={style.button}>
+      <button onClick={handleClickPrevious} className={style.button}>
         <div className={style.arrow__prev}></div>
       </button>
       <WordCard
