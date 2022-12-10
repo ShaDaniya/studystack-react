@@ -1,0 +1,70 @@
+@import "../../style/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 400px;
+    align-items: center;
+    justify-content: center;
+    background-color: #D3D5D4;
+    font-family: $mainFont;
+    gap: 1rem;
+}
+
+.button {
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    background-color: #878E99;
+    color:aliceblue;
+    height: 40px;
+    width: 44px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: #9DB5B2;
+        color: #625171;
+        transition: all .4s ease;
+    }
+}
+
+.arrow__prev {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #CCD5FF;
+    border-radius: 50%;
+}
+.arrow__prev:after {
+    position: absolute;
+    top: 8px;;
+    left: 9px;
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-left: 3px solid #CCD5FF;
+    border-bottom: 3px solid #CCD5FF;
+    transform: rotate(45deg);
+}
+
+.arrow__next {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #CCD5FF;
+    border-radius: 50%;
+}
+.arrow__next:after {
+    position: absolute;
+    top: 8px;;
+    left: 6px;
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-left: 3px solid #CCD5FF;
+    border-bottom: 3px solid #CCD5FF;
+    transform: rotate(-135deg);
+}
+

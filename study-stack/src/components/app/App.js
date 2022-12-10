@@ -15,7 +15,7 @@ function App() {
       {words.map((item, index) => {
       return <CardList english={item.english} transcription={item.transcription} russian={item.russian} tags={item.tags} key={index}/>})}
       {words.map((item, index) => {
-        return <WordCard  english={item.english} transcription={item.transcription} russian={item.russian} key={index}/>
+        return <WordCard english={item.english} transcription={item.transcription} russian={item.russian} key={index}/>
       })}
       <CardSlider />
       <Footer />

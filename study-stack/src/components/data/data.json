@@ -1,74 +1,88 @@
 [{
+    "id": 1,
     "english": "dog",
     "transcription": "[dɒg]",
     "russian": "собака",
     "tags": "животные"
 },{
+    "id": 2,
     "english": "cat",
     "transcription": "[kæt]",
     "russian": "кошка",
     "tags": "животные"
 },{
+    "id": 3,
     "english": "corn",
     "transcription": "[kɔːrn]",
     "russian": "кукуруза",
     "tags": "овощи"
 },{
+    "id": 4,
     "english": "butterfly",
     "transcription": "[ˈbʌtərflaɪ]",
     "russian": "бабочка",
     "tags": "насекомые"
 },{
+    "id": 5,
     "english": "hedgehog",
     "transcription": "[ˈhedʒ.hɒɡ]",
     "russian": "ежик",
     "tags": "животные"
 },{
+    "id": 6,
     "english": "kid",
     "transcription": "[kid]",
     "russian": "ребенок",
     "tags": "семья"
 },{
+    "id": 7,
     "english": "mother",
     "transcription": "[ ˈmʌð.ə r]",
     "russian": "мама",
     "tags": "семья"
 },{
+    "id": 8,
     "english": "father",
     "transcription": "[ˈfɑː.ðə r]",
     "russian": "отец",
     "tags": "семья"
 },{
+    "id": 9,
     "english": "family",
     "transcription": "[ˈfæm. ə l.i]",
     "russian": "семья",
     "tags": "животные"
 },{
+    "id": 10,
     "english": "accelerator",
     "transcription": "[əkˈseləreɪtə]",
     "russian": "акселератор",
     "tags": "автомобиль"
 },{
+    "id": 11,
     "english": "brake",
     "transcription": "[breɪk]",
     "russian": "тормоз",
     "tags": "автомобиль"
 },{
+    "id": 12,
     "english": "brake fluid",
     "transcription": "[breɪk ˈfluːɪd]",
     "russian": "тормозная жидкость",
     "tags": "автомобиль"
 },{
+    "id": 13,
     "english": "bulbs",
     "transcription": "[bʌlbz]",
     "russian": "лампы",
     "tags": "автомобиль"
-},{
+},{"id": 14,
     "english": "clutch",
     "transcription": "[klʌtʃ]",
     "russian": "сцепление",
     "tags": "автомобиль"
 },{
+    "id": 15,
     "english": "spruce",
     "transcription": "[spruːs]",
     "russian": "ель",

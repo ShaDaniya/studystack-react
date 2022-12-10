@@ -8,7 +8,7 @@ export default function header() {
       <header className={style.header}>
         <div className={style.header__wrapper}>
         <a href="#"><img src='./assets/word_logo.webp' alt="logo" className={style.header__logo}/></a>
-        <ul class={style.header__nav}>
+        <ul className={style.header__nav}>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Learn</a></li>
