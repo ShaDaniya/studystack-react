@@ -9,11 +9,10 @@ export default function Card_list({ english, transcription, russian, tags}) {
     setEditMode(!editMode)
   }
 
-  //функция для сохранения изменений
-  // const [saveWord, setSaveWord] = useState()
-  // const saveChanges = () => {
-  //   setSaveWord(!saveWord)
-  // }
+  const [cancelChanges, setCancelChanges] = useState("")
+  const cancelEdit = () => {
+    setCancelChanges(!cancelChanges)
+  }
 
   return (<>
     <div className={style.container}>
@@ -23,41 +22,32 @@ export default function Card_list({ english, transcription, russian, tags}) {
       <div className={style.item}>{tags}</div>
       <div className={style.button}>
       <button className={style.button} onClick=
-        {changeWord}><span className={style.button__text}>Edit</span></button>
+        {changeWord}><img src='./assets/edit-icon.svg' alt='edit_icon' className={style.icon}></img></button>
       </div>
       {editMode ? <div className={style.save__container}>
       <div>
-        <label htmlFor="word">Word</label>
-        <input type="text" />
+        {/* <label htmlFor="word">Word</label> */}
+        <input type="text" placeholder='Word' className={style.container__input}/>
         </div>
       <div>
-        <label htmlFor="transcription">Transcription</label>
-        <input type="text" />
+        {/* <label htmlFor="transcription">Transcription</label> */}
+        <input type="text" placeholder='Transcription' className={style.container__input}/>
       </div>
       <div>
-        <label htmlFor="translation">Translation</label>
-        <input type="text" />
+        {/* <label htmlFor="translation">Russian</label> */}
+        <input type="text" placeholder='Russian' className={style.container__input}/>
         </div>
       <div>
-      <label htmlFor="tags">Tags</label>
-        <input type="text" />
+      {/* <label htmlFor="tags">Tags</label> */}
+        <input type="text" placeholder='Tags' className={style.container__input}/>
+        </div>
+        <div className={style.button}>
+          <button className={style.button}><img src='./assets/save-icon.svg' alt='save_icon' className={style.icon}></img></button>
+        </div>
+        <div className={style.button}>
+          <button className={style.button} onClick={changeWord}><img src='./assets/cancel-icon.svg' alt='cancel_icon' className={style.icon}></img></button>
         </div>
       </div> : ""}
-       {/* <div>
-        <label htmlFor="word">{editMode ? "Word" : ""}</label>
-        {editMode ? <input type="text" /> : ""}
-        </div>
-      <div>
-        <label htmlFor="transcription">{editMode ? "Transcription" : ""}</label>
-        {editMode ? <input type="text" /> : ""}</div>
-      <div>
-        <label htmlFor="translation">{editMode ? "Translation" : ""}</label>
-        {editMode ? <input type="text" /> : ""}
-        </div>
-      <div>
-      <label htmlFor="tags">{editMode ? "Tags" : ""}</label>
-        {editMode ? <input type="text" /> : ""}
-        </div> */}
     </div>
     </>
   )

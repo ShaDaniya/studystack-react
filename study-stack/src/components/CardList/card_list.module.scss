@@ -3,7 +3,7 @@
 .container {
     align-items: center;
     display: grid;
-    grid-template-columns: 15% 18% 15% 15% 30%;
+    grid-template-columns: 15% 18% 15% 15% 25%;
     justify-content: center;
     grid-gap: 0.8rem;
     font-family: $mainFont;
@@ -30,9 +30,9 @@
     align-items: center;
     gap: 0.5rem;
     border: none;
-    width: 120px;
+    width: 60px;
     height: 20px;
-    background-color: #7F6A93;
+    background-color: #cbc7ce;
     border-radius: 0.5rem;
     color: aliceblue;
 
@@ -50,4 +50,23 @@
 
 .save__container {
     display: flex;
+    gap: 1rem;
+    min-height: 40px;
+}
+
+.container__input {
+    min-width: 50px;
+    min-height: 25px;
+    border: 1px solid #7F6A93;
+    border-radius: 5px;
+    background-color:  #f6f4f8;
+
+    &::placeholder {
+        color: #7F6A93;
+        font-family: $mainFont;
+    }
+}
+
+.icon {
+    width: 50%;
 }
