@@ -9,16 +9,26 @@ import CardSlider from '../CardSlider/CardSlider';
 
 function App() {
   return (
-    <div className={style.App}>
+    <div className={style.container} id="container">
+      <div className={style.header}>
       <Header />
+      </div>
+      <div className={style.main}>
+        <div className={style.section}>
       <CardHeader/>
-      {words.map((item, index) => {
-      return <CardList english={item.english} transcription={item.transcription} russian={item.russian} tags={item.tags} key={index}/>})}
+      {words.map((item) => {
+      return <CardList {...item} key={item.id.toString()}/>})}
       {/* {words.map((item, index) => {
         return <WordCard english={item.english} transcription={item.transcription} russian={item.russian} key={index}/>
       })} */}
+      </div>
+      <div className={style.section}>
       <CardSlider />
+      </div>
+      </div>
+      <div className={style.footer}>
       <Footer />
+      </div>
     </div>
   );
 }

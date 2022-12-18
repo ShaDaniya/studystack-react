@@ -3,7 +3,7 @@
 .container {
     align-items: center;
     display: grid;
-    grid-template-columns: 15% 18% 15% 15% 25%;
+    grid-template-columns: 18% 18% 18% 18% 18%;
     justify-content: center;
     grid-gap: 0.8rem;
     font-family: $mainFont;
@@ -11,6 +11,8 @@
     background-color: #D3D5D4;
     color: $cardFontColor;
     font-size: 1.1em;
+    padding-left: 2rem;
+
 }
 
 .item {

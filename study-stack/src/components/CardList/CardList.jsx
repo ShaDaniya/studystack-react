@@ -3,15 +3,10 @@ import style from './card_list.module.scss';
 
 export default function Card_list({ english, transcription, russian, tags}) {
 
-  //функция для открывания режима редактиврования
+  //функция для открывания режима редактирования
   const [editMode, setEditMode] = useState("")
   const changeWord = () => {
     setEditMode(!editMode)
-  }
-
-  const [cancelChanges, setCancelChanges] = useState("")
-  const cancelEdit = () => {
-    setCancelChanges(!cancelChanges)
   }
 
   return (<>
