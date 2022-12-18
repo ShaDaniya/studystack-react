@@ -17,7 +17,7 @@ function App() {
       <Route path="/" element={<div className={style.header}>
       <MainLayout />
       </div>}>
-      <Route path="/" element={<div className={style.main}><Main /></div>}/>
+      <Route index element={<div className={style.main}><Main /></div>}/>
       <Route path="words" element={<div className={style.main}>
         <div className={style.section}>
       <CardHeader/>

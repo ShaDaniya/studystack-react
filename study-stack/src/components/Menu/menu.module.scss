@@ -1,0 +1,57 @@
+@import "../../style/variables.scss";
+
+.header {
+    background-color: rgb(204,213,255);
+    font-family: $mainFont;
+
+    &__wrapper {
+        min-height: 50px;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(52, 79, 121, .56);
+    }
+
+    &__nav {
+        list-style-type: none;
+    }
+
+    &__logo {
+        max-width: 60px;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 0.8rem;
+
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: $mainFontColor;
+            font-size: 1.1em;
+            font-weight: 400;
+            transition: color .4s ease;
+
+
+            &:hover {
+                color: #715de6;
+            }
+        }
+    }
+
+    &__button {
+        border-radius: 0.3rem;
+        padding: 0.3rem 2rem;
+        border: 1px solid rgb(196, 177, 241);
+        background-color: #aeb2f6;
+
+        &:hover {
+            background-color: #d9e0ef;
+            transition: all .4s ease;
+        }
+    }
+}
+
