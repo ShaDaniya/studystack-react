@@ -52,6 +52,7 @@
 
 .save__container {
     display: flex;
+    flex-direction: row;
     gap: 1rem;
     min-height: 40px;
 }

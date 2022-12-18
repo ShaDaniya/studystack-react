@@ -2,8 +2,8 @@ import style from './main.module.scss'
 
 import React from 'react'
 
-export default function main() {
+export default function Main() {
   return (
-    <div>main</div>
+    <div><img src="/assets/monkey.jpeg" alt="monkey"/></div>
   )
 }

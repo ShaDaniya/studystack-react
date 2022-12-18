@@ -1,4 +1,18 @@
-@import "../../style/variables.scss";
+@import "../style/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main_content {
+flex-grow: 1;
+}
+
+.footer {
+    flex-shrink: 0;
+}
 
 .header {
     background-color: rgb(204,213,255);

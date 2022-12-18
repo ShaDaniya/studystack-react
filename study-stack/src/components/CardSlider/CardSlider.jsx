@@ -10,18 +10,18 @@ export default function CardSlider({
 }) {
 
   const [translation, setRussian] = useState(false);
+  const [answer, setAnswer] = useState(false);
+  const [cardIndex, setCardIndex] = useState(0);
+
   const handleChange = () => {
     setRussian(!translation);
     setAnswer(false)
   };
 
-  const [answer, setAnswer] = useState(false);
   const handleAnswer = () => {
     setAnswer(!answer);
     setRussian(false)
   };
-
-  const [cardIndex, setCardIndex] = useState(0);
 
   const handleClickNext = () => {
     if (cardIndex === words.length - 1) {

@@ -1,35 +1,37 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import style from'./app.module.scss';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import words from '../data/data.json';
+import MainLayout from '../../MainLayout/MainLayout';
 import CardList from '../CardList/CardList';
 import CardHeader from '../CardHeader/CardHeader';
-//import WordCard from '../WordCard/WordCard';
 import CardSlider from '../CardSlider/CardSlider';
+import Main from '../Main/Main';
+import NotFound from '../NotFound/NotFound';
+import words from '../data/data.json';
+
 
 function App() {
   return (
+    <BrowserRouter>
     <div className={style.container} >
-      <div className={style.header}>
-      <Header />
-      </div>
-      <div className={style.main}>
+      <Routes>
+      <Route path="/" element={<div className={style.header}>
+      <MainLayout />
+      </div>}>
+      <Route path="/" element={<div className={style.main}><Main /></div>}/>
+      <Route path="words" element={<div className={style.main}>
         <div className={style.section}>
       <CardHeader/>
       {words.map((item) => {
       return <CardList {...item} key={item.id.toString()}/>})}
-      {/* {words.map((item, index) => {
-        return <WordCard english={item.english} transcription={item.transcription} russian={item.russian} key={index}/>
-      })} */}
-      </div>
-      <div className={style.section}>
+      </div></div>}/>
+      <Route path="flashcards" element={<div className={style.section}>
       <CardSlider />
-      </div>
-      </div>
-      <div className={style.footer}>
-      <Footer />
-      </div>
+      </div>}/>
+      <Route path="*" element={<NotFound />}/>
+      </Route>
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
