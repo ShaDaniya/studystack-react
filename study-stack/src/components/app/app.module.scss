@@ -2,6 +2,13 @@ html, body {
     margin: 0;
     height: 100%;
     background-color: rgb(217, 241, 242);
+    background-image: url(../../../public/assets/background_words.jpeg);
+    min-height:100%;
+    background-size:cover;
+}
+
+body {
+    
 }
 
 .container {

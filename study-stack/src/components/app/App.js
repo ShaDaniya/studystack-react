@@ -9,7 +9,7 @@ import CardSlider from '../CardSlider/CardSlider';
 
 function App() {
   return (
-    <div className={style.container} id="container">
+    <div className={style.container} >
       <div className={style.header}>
       <Header />
       </div>
