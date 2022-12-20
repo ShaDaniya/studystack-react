@@ -1,6 +1,6 @@
+import style from './cardSlider.module.scss';
 import { useState } from 'react';
 import WordCard from '../WordCard/WordCard';
-import style from './cardSlider.module.scss';
 import words from '../data/data.json';
 
 export default function CardSlider({
