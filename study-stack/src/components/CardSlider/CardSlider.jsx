@@ -12,15 +12,19 @@ export default function CardSlider({
   const [translation, setRussian] = useState(false);
   const [answer, setAnswer] = useState(false);
   const [cardIndex, setCardIndex] = useState(0);
+  const [checked, setChecked] = useState(false);
+  const [answered, setAnswered] = useState(false);
 
   const handleChange = () => {
-    setRussian(!translation);
-    setAnswer(false)
+    setRussian(false);
+    setAnswer(false);
+    handleCheckedStyle();
   };
 
   const handleAnswer = () => {
-    setAnswer(!answer);
+    setAnswer(false);
     setRussian(false)
+    handleAnsweredStyle();
   };
 
   const handleClickNext = () => {
@@ -31,6 +35,8 @@ export default function CardSlider({
     }
     setRussian(false)
     setAnswer(false)
+    setChecked(false)
+    setAnswered(false)
   };
 
   const handleClickPrevious = () => {
@@ -41,6 +47,16 @@ export default function CardSlider({
     }
     setRussian(false)
     setAnswer(false)
+    setChecked(false)
+    setAnswered(false)
+  };
+
+  const handleCheckedStyle = () => {
+    setChecked(!checked);
+  };
+
+  const handleAnsweredStyle = () => {
+    setAnswered(!answered);
   };
 
   return (
@@ -51,7 +67,7 @@ export default function CardSlider({
       <WordCard
         english={words[cardIndex].english}
         transcription={words[cardIndex].transcription}
-        russian={words[cardIndex].russian} handleChange={handleChange} translation={translation} handleAnswer={handleAnswer} answer={answer}
+        russian={words[cardIndex].russian} handleChange={handleChange} translation={translation} handleAnswer={handleAnswer} answer={answer} checked={checked} answered={answered}
       />
       <button onClick={handleClickNext} className={style.button}>
         <div className={style.arrow__next}></div>
