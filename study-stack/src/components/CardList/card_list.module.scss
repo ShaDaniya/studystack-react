@@ -8,10 +8,15 @@
     grid-gap: 0.8rem;
     font-family: $mainFont;
     text-align: center;
-    background-color: #e9e8eb;
+    background-color: rgba(222, 222, 234, 0.98);
     color: $cardFontColor;
     font-size: 1.1em;
     padding-left: 2rem;
+    border-bottom: thick double #979597;
+
+    &:last-child {
+        border-bottom: none
+    }
 }
 
 .item {

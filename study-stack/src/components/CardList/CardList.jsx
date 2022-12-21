@@ -21,19 +21,15 @@ export default function Card_list({ english, transcription, russian, tags}) {
       </div>
       {editMode ? <div className={style.save__container}>
       <div>
-        {/* <label htmlFor="word">Word</label> */}
         <input type="text" placeholder='Word' className={style.container__input}/>
         </div>
       <div>
-        {/* <label htmlFor="transcription">Transcription</label> */}
         <input type="text" placeholder='Transcription' className={style.container__input}/>
       </div>
       <div>
-        {/* <label htmlFor="translation">Russian</label> */}
         <input type="text" placeholder='Russian' className={style.container__input}/>
         </div>
       <div>
-      {/* <label htmlFor="tags">Tags</label> */}
         <input type="text" placeholder='Tags' className={style.container__input}/>
         </div>
         <div className={style.button}>

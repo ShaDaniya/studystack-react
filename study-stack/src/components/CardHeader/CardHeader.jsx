@@ -7,6 +7,7 @@ export default function CardHeader() {
         <div className={style.item}>Transcription</div>
         <div className={style.item}>Russian</div>
         <div className={style.item}>Tag</div>
+        <div className={style.item}>Edit</div>
     </div>
   )
 }
