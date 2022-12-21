@@ -16,13 +16,13 @@ export default function CardSlider({
   const [answered, setAnswered] = useState(false);
 
   const handleChange = () => {
-    setRussian(false);
+    setRussian(!translation);
     setAnswer(false);
     handleCheckedStyle();
   };
 
   const handleAnswer = () => {
-    setAnswer(false);
+    setAnswer(!answer);
     setRussian(false)
     handleAnsweredStyle();
   };
@@ -35,8 +35,6 @@ export default function CardSlider({
     }
     setRussian(false)
     setAnswer(false)
-    setChecked(false)
-    setAnswered(false)
   };
 
   const handleClickPrevious = () => {
@@ -47,8 +45,6 @@ export default function CardSlider({
     }
     setRussian(false)
     setAnswer(false)
-    setChecked(false)
-    setAnswered(false)
   };
 
   const handleCheckedStyle = () => {
