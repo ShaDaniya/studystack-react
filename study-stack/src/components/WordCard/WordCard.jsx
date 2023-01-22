@@ -1,8 +1,16 @@
 import style from './word_card.module.scss';
 import './word_card.scss';
-import React from 'react';
+import { useEffect, useRef } from 'react'; 
 
 export default function WordCard({ english, transcription, russian, handleChange, translation, handleAnswer, answer, checked, answered }) {
+ 
+  
+    const buttonRef = useRef(null);
+    useEffect(() => {
+      buttonRef.current.focus()
+    }, [english])
+  
+
 
   return (
     <div className={style.container}>
@@ -16,7 +24,7 @@ export default function WordCard({ english, transcription, russian, handleChange
             {answer ? '' : transcription}
           </span>
           <div className={style.btn__container}>
-            <button className={checked ? 'card__translation' : 'card__button'} onClick={handleChange} >
+            <button ref={buttonRef} className={checked ? 'card__translation' : 'card__button'} onClick={handleChange} >
               {translation ? russian : 'Click to flip'}
             </button>
           </div>
