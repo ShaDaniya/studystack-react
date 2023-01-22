@@ -2,12 +2,19 @@
 
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 520px;
     align-items: center;
     justify-content: center;
     background-color: #D3D5D4;
     font-family: $mainFont;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -66,5 +73,11 @@
     border-left: 3px solid #CCD5FF;
     border-bottom: 3px solid #CCD5FF;
     transform: rotate(-135deg);
+}
+
+.words_counter {
+    font-family: $mainFont;
+    font-size: 1.1rem;
+    color: #625171;
 }
 
