@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import style from './card_list.module.scss';
+import './card_list.scss'
 
 export default function Card_list({ english, transcription, russian, tags}) {
 
@@ -8,6 +9,35 @@ export default function Card_list({ english, transcription, russian, tags}) {
   const changeWord = () => {
     setEditMode(!editMode)
   }
+
+  //валидация пустого поля
+  const [initialValue, setInitialValue] = useState({
+    englishWord: '',
+    transcriptionWord: '',
+    russianWord: '',
+    tagsWord: ''
+  })
+
+  function getValue(e) {
+    e.preventDefault()
+    const copyInitialValue = {...initialValue }
+    copyInitialValue[e.target.name] = e.target.value
+    setInitialValue(copyInitialValue)
+  }
+
+  function validate(value) {
+    if (value !== '') {
+      return true
+    }
+    return false
+  }
+
+  const validateFlag = validate(initialValue.englishWord) && validate(initialValue.transcriptionWord) && validate(initialValue.russianWord) && validate(initialValue.tagsWord)
+
+  const validateEnglishWord = validate(initialValue.englishWord)
+  const validateTranscriptionWord = validate(initialValue.transcriptionWord)
+  const validateRussianWord = validate(initialValue.russianWord)
+  const validateTagsWord = validate(initialValue.tagsWord)
 
   return (<>
     <div className={style.container}>
@@ -21,20 +51,20 @@ export default function Card_list({ english, transcription, russian, tags}) {
       </div>
       {editMode ? <div className={style.save__container}>
       <div>
-        <input type="text" placeholder='Word' className={style.container__input}/>
+        <input type="text" placeholder='Word' className={validateEnglishWord ? 'container__input' : 'container__input-empty'} onChange={getValue} name="englishWord" value={initialValue.englishWord}/>
         </div>
       <div>
-        <input type="text" placeholder='Transcription' className={style.container__input}/>
+        <input type="text" placeholder='Transcription' className={validateTranscriptionWord ? 'container__input' : 'container__input-empty'} onChange={getValue} name="transcriptionWord" value={initialValue.transcriptionWord}/>
       </div>
       <div>
-        <input type="text" placeholder='Russian' className={style.container__input}/>
+        <input type="text" placeholder='Russian' className={validateRussianWord ? 'container__input' : 'container__input-empty'} onChange={getValue} name="russianWord" value={initialValue.russianWord}/>
         </div>
       <div>
-        <input type="text" placeholder='Tags' className={style.container__input}/>
+        <input type="text" placeholder='Tags' className={validateTagsWord ? 'container__input' : 'container__input-empty'} onChange={getValue} name="tagsWord" value={initialValue.tagsWord}/>
         </div>
-        <div className={style.button}>
+        {validateFlag && <div className={style.button}>
           <button className={style.button}><img src='./assets/save-icon.svg' alt='save_icon' className={style.icon}></img></button>
-        </div>
+        </div>}
         <div className={style.button}>
           <button className={style.button} onClick={changeWord}><img src='./assets/cancel-icon.svg' alt='cancel_icon' className={style.icon}></img></button>
         </div>

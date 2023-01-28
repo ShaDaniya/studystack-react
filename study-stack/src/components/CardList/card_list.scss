@@ -1,0 +1,27 @@
+@import "../../style/variables.scss";
+
+.container__input {
+    min-width: 50px;
+    min-height: 25px;
+    border: 1px solid #7F6A93;
+    border-radius: 5px;
+    background-color:  #f6f4f8;
+
+    &::placeholder {
+        color: #7F6A93;
+        font-family: $mainFont;
+    }
+}
+
+.container__input-empty {
+    min-width: 50px;
+    min-height: 25px;
+    border: 2px solid rgb(207, 67, 67);
+    border-radius: 5px;
+    background-color:  #f6f4f8;
+
+    &::placeholder {
+        color: #7F6A93;
+        font-family: $mainFont;
+    }
+}
