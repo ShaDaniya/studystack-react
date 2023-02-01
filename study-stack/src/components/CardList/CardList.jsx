@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import style from './card_list.module.scss';
 import './card_list.scss'
 
-export default function Card_list({ english, transcription, russian, tags}) {
+export default function Card_list({ id, english, transcription, russian, tags, editWord}) {
 
   //функция для открывания режима редактирования
   const [editMode, setEditMode] = useState("")
@@ -12,10 +12,10 @@ export default function Card_list({ english, transcription, russian, tags}) {
 
   //валидация пустого поля
   const [initialValue, setInitialValue] = useState({
-    englishWord: '',
-    transcriptionWord: '',
-    russianWord: '',
-    tagsWord: ''
+    englishWord: english,
+    transcriptionWord: transcription,
+    russianWord: russian,
+    tagsWord: tags
   })
 
   function getValue(e) {
@@ -38,6 +38,12 @@ export default function Card_list({ english, transcription, russian, tags}) {
   const validateTranscriptionWord = validate(initialValue.transcriptionWord)
   const validateRussianWord = validate(initialValue.russianWord)
   const validateTagsWord = validate(initialValue.tagsWord)
+
+
+  //функция для сохранения слова
+  function saveWord() {
+    editWord(id, initialValue.englishWord, initialValue.transcriptionWord, initialValue.russianWord, initialValue.tagsWord)
+  }
 
   return (<>
     <div className={style.container}>
@@ -63,7 +69,8 @@ export default function Card_list({ english, transcription, russian, tags}) {
         <input type="text" placeholder='Tags' className={validateTagsWord ? 'container__input' : 'container__input-empty'} onChange={getValue} name="tagsWord" value={initialValue.tagsWord}/>
         </div>
         {validateFlag && <div className={style.button}>
-          <button className={style.button}><img src='./assets/save-icon.svg' alt='save_icon' className={style.icon}></img></button>
+          <button className={style.button}
+          onClick={saveWord}><img src='./assets/save-icon.svg' alt='save_icon' className={style.icon}></img></button>
         </div>}
         <div className={style.button}>
           <button className={style.button} onClick={changeWord}><img src='./assets/cancel-icon.svg' alt='cancel_icon' className={style.icon}></img></button>
