@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 import style from './card_list.module.scss';
 import './card_list.scss'
 
@@ -10,13 +11,16 @@ export default function Card_list({ id, english, transcription, russian, tags, e
     setEditMode(!editMode)
   }
 
-  //валидация пустого поля
-  const [initialValue, setInitialValue] = useState({
-    englishWord: english,
-    transcriptionWord: transcription,
-    russianWord: russian,
-    tagsWord: tags
-  })
+  const [initialValue, setInitialValue] = useState({})
+
+  useEffect(() => {
+    setInitialValue({
+      englishWord: english,
+      transcriptionWord: transcription,
+      russianWord: russian,
+      tagsWord: tags
+    })
+  }, [id, english, transcription, russian, tags, editWord])
 
   function getValue(e) {
     e.preventDefault()
