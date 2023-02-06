@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import style from './card_list.module.scss';
-import './card_list.scss'
+import './card_list.scss';
+import EditServices from '../../Services/EditServices'
+import { WordsContext } from '../../contexts/WordsContext'
 
 export default function Card_list({ id, english, transcription, russian, tags, editWord}) {
 
@@ -49,6 +51,17 @@ export default function Card_list({ id, english, transcription, russian, tags, e
     editWord(id, initialValue.englishWord, initialValue.transcriptionWord, initialValue.russianWord, initialValue.tagsWord)
   }
 
+  const { valueContext, setValueContext} = useContext(WordsContext)
+
+
+//тут должна быть функция для изменения, но она работает, как функиця для удаления
+  async function handleEdit(id) {
+    EditServices.editWords(id)
+    const copyWords = [...valueContext]
+    const copyWordsEdit = copyWords.filter(item => item.id !== id)
+    setValueContext(copyWordsEdit)
+  }
+
   return (<>
     <div className={style.container}>
       <div className={style.item}>{english}</div>
@@ -74,7 +87,7 @@ export default function Card_list({ id, english, transcription, russian, tags, e
         </div>
         {validateFlag && <div className={style.button}>
           <button className={style.button}
-          onClick={saveWord}><img src='./assets/save-icon.svg' alt='save_icon' className={style.icon}></img></button>
+          onClick={() => {handleEdit(id)}}><img src='./assets/save-icon.svg' alt='save_icon' className={style.icon}></img></button>
         </div>}
         <div className={style.button}>
           <button className={style.button} onClick={changeWord}><img src='./assets/cancel-icon.svg' alt='cancel_icon' className={style.icon}></img></button>
