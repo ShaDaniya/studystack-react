@@ -1,14 +1,17 @@
 import CardList from '../CardList/CardList';
 import CardHeader from '../CardHeader/CardHeader';
-import words from '../data/data.json';
-import { useState, useEffect } from 'react'
+//import words from '../data/data.json';
+import { useState, useEffect, useContext } from 'react'
+import { WordsContext } from '../../contexts/WordsContext'
 
 export default function WordsTable() {
+
+  const { valueContext, setValueContext} = useContext(WordsContext)
 
   const [wordsList, setWordsList] = useState(false)
 
   useEffect(() => {
-    setWordsList(words)
+    setWordsList(valueContext)
   }, [])
 
   //функция для сохранения слова - пропсом передается в компонент CardList
@@ -28,9 +31,10 @@ export default function WordsTable() {
   }
 
   return (
+    // тут должен быть лоадер и тогда добавить состояние лоадинг в контекст и это тоже передать в велью
         <div>
       <CardHeader/>
-      {words.map((item) => {
+      {valueContext?.map((item) => {
       return <CardList {...item} key={item.id.toString()} editWord={editWord}/>})}
       </div>
   )

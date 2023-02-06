@@ -1,13 +1,14 @@
 import style from './cardSlider.module.scss';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import WordCard from '../WordCard/WordCard';
-import words from '../data/data.json';
+//import words from '../data/data.json';
+import { WordsContext } from '../../contexts/WordsContext'
 
 export default function CardSlider({
-  english,
-  transcription,
-  russian, ...props
+  english, ...props
 }) {
+
+  const { valueContext, setValueContext} = useContext(WordsContext)
 
   const [translation, setRussian] = useState(false);
   const [answer, setAnswer] = useState(false);
@@ -21,7 +22,7 @@ export default function CardSlider({
   const handleChange = () => {
     setRussian(!translation);
     setAnswer(false);
-    handleCount(words[cardIndex].id)
+    handleCount(valueContext[cardIndex].id)
     handleCheckedStyle();
   };
 
@@ -32,8 +33,8 @@ export default function CardSlider({
   };
 
   const handleClickNext = () => {
-    if (cardIndex === words.length - 1) {
-      setCardIndex(words.length - (words.length - 1));
+    if (cardIndex === valueContext.length - 1) {
+      setCardIndex(valueContext.length - (valueContext.length - 1));
     } else {
       setCardIndex(cardIndex + 1)
     }
@@ -43,7 +44,7 @@ export default function CardSlider({
 
   const handleClickPrevious = () => {
     if (cardIndex === 0) {
-      setCardIndex(words.length - 1)
+      setCardIndex(valueContext.length - 1)
     } else {
       setCardIndex(cardIndex - 1)
     }
@@ -75,7 +76,7 @@ const handleCount = (id) => {
   setWordsQuantity(resultArr.length)
 
   //проверить, все ли слова выучили
-  if (resultArr.length === words.length) {
+  if (resultArr.length === valueContext.length) {
     setLearntWords(true)
   }
 }
@@ -87,9 +88,9 @@ const handleCount = (id) => {
         <div className={style.arrow__prev}></div>
       </button>
       <WordCard
-        english={words[cardIndex].english}
-        transcription={words[cardIndex].transcription}
-        russian={words[cardIndex].russian} handleChange={handleChange} translation={translation} handleAnswer={handleAnswer} answer={answer} checked={checked} answered={answered} 
+        english={valueContext[cardIndex].english}
+        transcription={valueContext[cardIndex].transcription}
+        russian={valueContext[cardIndex].russian} handleChange={handleChange} translation={translation} handleAnswer={handleAnswer} answer={answer} checked={checked} answered={answered} 
       />
       <button onClick={handleClickNext} className={style.button}>
         <div className={style.arrow__next}></div>
@@ -97,7 +98,7 @@ const handleCount = (id) => {
       </div>
       {learntWords
       ? <span className={style.words_counter}>You've learnt all the words!</span>
-      : <span className={style.words_counter}>You've learnt: {wordsQuantity} / {words.length}</span>}
+      : <span className={style.words_counter}>You've learnt: {wordsQuantity} / {valueContext.length}</span>}
     </div>
   );
 }
