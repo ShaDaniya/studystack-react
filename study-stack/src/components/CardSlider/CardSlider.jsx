@@ -1,10 +1,13 @@
 import style from './cardSlider.module.scss';
 import { useState } from 'react';
 import WordCard from '../WordCard/WordCard';
-//import words from '../data/data.json';
-import { observer, inject } from 'mobx-react';
+import words from '../data/data.json';
 
-function CardSlider({ wordsStore }) {
+export default function CardSlider({
+  english,
+  transcription,
+  russian, ...props
+}) {
 
   const [translation, setRussian] = useState(false);
   const [answer, setAnswer] = useState(false);
@@ -18,7 +21,7 @@ function CardSlider({ wordsStore }) {
   const handleChange = () => {
     setRussian(!translation);
     setAnswer(false);
-    handleCount(wordsStore.words[cardIndex].id)
+    handleCount(words[cardIndex].id)
     handleCheckedStyle();
   };
 
@@ -29,8 +32,8 @@ function CardSlider({ wordsStore }) {
   };
 
   const handleClickNext = () => {
-    if (cardIndex === wordsStore.words.length - 1) {
-      setCardIndex(wordsStore.words.length - (wordsStore.words.length - 1));
+    if (cardIndex === words.length - 1) {
+      setCardIndex(words.length - (words.length - 1));
     } else {
       setCardIndex(cardIndex + 1)
     }
@@ -40,7 +43,7 @@ function CardSlider({ wordsStore }) {
 
   const handleClickPrevious = () => {
     if (cardIndex === 0) {
-      setCardIndex(wordsStore.words.length - 1)
+      setCardIndex(words.length - 1)
     } else {
       setCardIndex(cardIndex - 1)
     }
@@ -72,7 +75,7 @@ const handleCount = (id) => {
   setWordsQuantity(resultArr.length)
 
   //проверить, все ли слова выучили
-  if (resultArr.length === wordsStore.words.length) {
+  if (resultArr.length === words.length) {
     setLearntWords(true)
   }
 }
@@ -84,9 +87,9 @@ const handleCount = (id) => {
         <div className={style.arrow__prev}></div>
       </button>
       <WordCard
-        english={wordsStore.words[cardIndex].english}
-        transcription={wordsStore.words[cardIndex].transcription}
-        russian={wordsStore.words[cardIndex].russian} handleChange={handleChange} translation={translation} handleAnswer={handleAnswer} answer={answer} checked={checked} answered={answered} 
+        english={words[cardIndex].english}
+        transcription={words[cardIndex].transcription}
+        russian={words[cardIndex].russian} handleChange={handleChange} translation={translation} handleAnswer={handleAnswer} answer={answer} checked={checked} answered={answered} 
       />
       <button onClick={handleClickNext} className={style.button}>
         <div className={style.arrow__next}></div>
@@ -94,9 +97,7 @@ const handleCount = (id) => {
       </div>
       {learntWords
       ? <span className={style.words_counter}>You've learnt all the words!</span>
-      : <span className={style.words_counter}>You've learnt: {wordsQuantity} / {wordsStore.words.length}</span>}
+      : <span className={style.words_counter}>You've learnt: {wordsQuantity} / {words.length}</span>}
     </div>
   );
 }
-
-export default inject(['wordsStore']) (observer(CardSlider))
