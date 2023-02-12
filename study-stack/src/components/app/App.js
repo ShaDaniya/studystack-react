@@ -5,8 +5,15 @@ import CardSlider from '../CardSlider/CardSlider';
 import Main from '../Main/Main';
 import WordsTable from '../WordsTable/WordsTable';
 import NotFound from '../NotFound/NotFound';
+import { observer, inject } from 'mobx-react';
+import { useEffect } from 'react';
 
-function App() {
+function App({ wordsStore }) {
+
+  useEffect(() => {
+    wordsStore.loadData()
+  }, [])
+
   return (
     <BrowserRouter>
     <div className={style.container} >
@@ -28,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default inject(['wordsStore'])(observer(App));
