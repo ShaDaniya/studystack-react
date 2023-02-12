@@ -1,15 +1,16 @@
 import CardList from '../CardList/CardList';
 import CardHeader from '../CardHeader/CardHeader';
-import words from '../data/data.json';
+//import words from '../data/data.json';
 import { useState, useEffect } from 'react'
+import { observer, inject } from 'mobx-react';
 
-export default function WordsTable() {
+function WordsTable({ wordsStore }) {
 
   const [wordsList, setWordsList] = useState(false)
 
-  useEffect(() => {
-    setWordsList(words)
-  }, [])
+  // useEffect(() => {
+  //   setWordsList(words)
+  // }, [])
 
   //функция для сохранения слова - пропсом передается в компонент CardList
   function editWord (id, english, transcription,russian,tags) {
@@ -30,8 +31,10 @@ export default function WordsTable() {
   return (
         <div>
       <CardHeader/>
-      {words.map((item) => {
+      {wordsStore.words.map((item) => {
       return <CardList {...item} key={item.id.toString()} editWord={editWord}/>})}
       </div>
   )
 }
+
+export default inject(['wordsStore'])(observer(WordsTable));
